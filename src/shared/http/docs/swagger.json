@@ -1,0 +1,174 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "plataforma-microservice",
+    "version": "1.0.0",
+    "description": "API documentation"
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "tags": [
+          "Health"
+        ],
+        "summary": "handle",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/requests/": {
+      "post": {
+        "tags": [
+          "Requests"
+        ],
+        "summary": "Cria as solicitações",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "example": {}
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Solicitação criado com sucesso",
+            "content": {
+              "application/json": {
+                "example": {}
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição mal formada",
+            "content": {
+              "application/json": {
+                "example": {}
+              }
+            }
+          },
+          "401": {
+            "description": "Não autorizado",
+            "content": {
+              "application/json": {
+                "example": {}
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor",
+            "content": {
+              "application/json": {
+                "example": {}
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Requests"
+        ],
+        "summary": "Lista as solicitações",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Listagem de solicitações",
+            "content": {
+              "application/json": {
+                "example": [
+                  {}
+                ]
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição mal formada",
+            "content": {
+              "application/json": {
+                "example": {}
+              }
+            }
+          },
+          "401": {
+            "description": "Não autorizado",
+            "content": {
+              "application/json": {
+                "example": {}
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor",
+            "content": {
+              "application/json": {
+                "example": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/requests/status": {
+      "patch": {
+        "tags": [
+          "Requests"
+        ],
+        "summary": "Altera o status da solicitação",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "example": {}
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Atualização de solicitação efetuada com sucesso",
+            "content": {
+              "application/json": {
+                "example": {}
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição mal formada",
+            "content": {
+              "application/json": {
+                "example": {}
+              }
+            }
+          },
+          "401": {
+            "description": "Não autorizado",
+            "content": {
+              "application/json": {
+                "example": {}
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor",
+            "content": {
+              "application/json": {
+                "example": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}
