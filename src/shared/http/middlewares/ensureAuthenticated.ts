@@ -13,6 +13,7 @@ export function ensureAuthenticated(req: Request, res: Response, next: NextFunct
     req.user = {
       id: (decoded as any).sub,
       email: (decoded as any).email,
+      isAdmin: (decoded as any).isAdmin,
     };
     return next();
   } catch {
