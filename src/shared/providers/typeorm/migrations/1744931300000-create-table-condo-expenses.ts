@@ -24,8 +24,8 @@ export class CreateTableCondoExpenses1744931300000
           },
           { name: 'date', type: 'date' },
           { name: 'receiptUrl', type: 'varchar', isNullable: true },
-          { name: 'created_at', type: 'datetime', default: 'GETDATE()' },
-          { name: 'updated_at', type: 'datetime', default: 'GETDATE()' },
+          { name: 'created_at', type: 'datetime', default: 'CURRENT_TIMESTAMP' },
+          { name: 'updated_at', type: 'datetime', default: 'CURRENT_TIMESTAMP' },
         ],
       }),
     );

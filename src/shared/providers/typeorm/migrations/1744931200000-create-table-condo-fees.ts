@@ -20,8 +20,8 @@ export class CreateTableCondoFees1744931200000 implements MigrationInterface {
           { name: 'asaasPaymentId', type: 'varchar', isNullable: true },
           { name: 'externalReference', type: 'varchar', isNullable: true },
           { name: 'dueDate', type: 'date' },
-          { name: 'created_at', type: 'datetime', default: 'GETDATE()' },
-          { name: 'updated_at', type: 'datetime', default: 'GETDATE()' },
+          { name: 'created_at', type: 'datetime', default: 'CURRENT_TIMESTAMP' },
+          { name: 'updated_at', type: 'datetime', default: 'CURRENT_TIMESTAMP' },
         ],
       }),
     );

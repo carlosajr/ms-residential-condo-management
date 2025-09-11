@@ -8,8 +8,8 @@ export class CreateTableApartments1744931400000 implements MigrationInterface {
         columns: [
           { name: 'id', type: 'int', isPrimary: true, isGenerated: true, generationStrategy: 'increment' },
           { name: 'number', type: 'varchar' },
-          { name: 'created_at', type: 'datetime', default: 'GETDATE()' },
-          { name: 'updated_at', type: 'datetime', default: 'GETDATE()' },
+          { name: 'created_at', type: 'datetime', default: 'CURRENT_TIMESTAMP' },
+          { name: 'updated_at', type: 'datetime', default: 'CURRENT_TIMESTAMP' },
         ],
       }),
     );

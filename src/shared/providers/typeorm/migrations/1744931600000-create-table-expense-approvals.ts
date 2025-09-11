@@ -11,7 +11,7 @@ export class CreateTableExpenseApprovals1744931600000
           { name: 'id', type: 'int', isPrimary: true, isGenerated: true, generationStrategy: 'increment' },
           { name: 'expenseId', type: 'int' },
           { name: 'userId', type: 'int' },
-          { name: 'created_at', type: 'datetime', default: 'GETDATE()' },
+          { name: 'created_at', type: 'datetime', default: 'CURRENT_TIMESTAMP' },
         ],
         foreignKeys: [
           {

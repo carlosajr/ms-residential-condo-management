@@ -13,8 +13,8 @@ export class CreateTableUsers1744931500000 implements MigrationInterface {
           { name: 'phone', type: 'varchar' },
           { name: 'isAdmin', type: 'bit', default: 0 },
           { name: 'apartmentId', type: 'int' },
-          { name: 'created_at', type: 'datetime', default: 'GETDATE()' },
-          { name: 'updated_at', type: 'datetime', default: 'GETDATE()' },
+          { name: 'created_at', type: 'datetime', default: 'CURRENT_TIMESTAMP' },
+          { name: 'updated_at', type: 'datetime', default: 'CURRENT_TIMESTAMP' },
         ],
         foreignKeys: [
           {

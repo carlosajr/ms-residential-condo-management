@@ -25,12 +25,12 @@ export class CreateTableRequests1744925335300 implements MigrationInterface {
           {
             name: 'created_at',
             type: 'datetime',
-            default: 'GETDATE()',
+            default: 'CURRENT_TIMESTAMP',
           },
           {
             name: 'updated_at',
             type: 'datetime',
-            default: 'GETDATE()',
+            default: 'CURRENT_TIMESTAMP',
           },
         ],
       }),
