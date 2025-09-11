@@ -56,8 +56,8 @@ export class App {
   }
 
   private async setupProviders(): Promise<void> {
-    const redis = container.resolve<IRedisClient>(REDIS_CLIENT);
-    await redis.init();
+    // const redis = container.resolve<IRedisClient>(REDIS_CLIENT);
+    // await redis.init();
   }
 
   public getApp(): Application {

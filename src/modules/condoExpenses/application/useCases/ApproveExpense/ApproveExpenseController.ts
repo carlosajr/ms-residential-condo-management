@@ -5,9 +5,9 @@ import {
   Body,
   Controller,
   Description,
-  Param,
   Post,
   Tags,
+  ApiParam,
   CommonResponses,
 } from '@/shared/http/docs/decorators';
 import { ApproveExpenseUseCase } from './ApproveExpenseUseCase';
@@ -24,7 +24,12 @@ export class ApproveExpenseController {
   @Post(':id/approve')
   @Description('Approve payment of an expense')
   @Body(ApproveExpenseDTO)
-  @Param('id')
+  @ApiParam({
+    name: 'id',
+    description: 'Id da conta a ser paga',
+    type: 'number',
+    example: '10',
+  })
   @CommonResponses()
   async handle(req: Request, res: Response): Promise<Response> {
     const useCase = container.resolve(ApproveExpenseUseCase);

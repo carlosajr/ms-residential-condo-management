@@ -11,4 +11,6 @@ export const METADATA_KEYS = {
   REQUIRES_AUTH: 'custom:requires-auth',
   API_PROPERTIES: 'custom:api-properties',
   DESCRIPTION: 'custom:description',
+  PARAMS: 'custom:params',
+  QUERY: 'custom:query',
 };

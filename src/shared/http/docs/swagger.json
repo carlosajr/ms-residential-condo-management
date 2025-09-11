@@ -6,14 +6,104 @@
     "description": "API documentation"
   },
   "paths": {
-    "/health": {
+    "/apartments/": {
+      "post": {
+        "tags": [
+          "Apartments"
+        ],
+        "summary": "Create a new apartment",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "example": {}
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Requisição mal formada",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Não autorizado",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
       "get": {
         "tags": [
-          "Health"
+          "Apartments"
         ],
-        "summary": "handle",
+        "summary": "List all apartments",
         "parameters": [],
-        "responses": {}
+        "responses": {
+          "400": {
+            "description": "Requisição mal formada",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Não autorizado",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/requests/": {
@@ -27,7 +117,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "example": {}
+              "example": {
+                "description": "string"
+              }
             }
           }
         },
@@ -36,7 +128,11 @@
             "description": "Solicitação criado com sucesso",
             "content": {
               "application/json": {
-                "example": {}
+                "example": {
+                  "id": 1,
+                  "description": "string",
+                  "status": "string"
+                }
               }
             }
           },
@@ -44,7 +140,11 @@
             "description": "Requisição mal formada",
             "content": {
               "application/json": {
-                "example": {}
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
               }
             }
           },
@@ -52,7 +152,11 @@
             "description": "Não autorizado",
             "content": {
               "application/json": {
-                "example": {}
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
               }
             }
           },
@@ -60,7 +164,11 @@
             "description": "Erro interno no servidor",
             "content": {
               "application/json": {
-                "example": {}
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
               }
             }
           }
@@ -78,7 +186,11 @@
             "content": {
               "application/json": {
                 "example": [
-                  {}
+                  {
+                    "id": 1,
+                    "description": "string",
+                    "status": "string"
+                  }
                 ]
               }
             }
@@ -87,7 +199,11 @@
             "description": "Requisição mal formada",
             "content": {
               "application/json": {
-                "example": {}
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
               }
             }
           },
@@ -95,7 +211,11 @@
             "description": "Não autorizado",
             "content": {
               "application/json": {
-                "example": {}
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
               }
             }
           },
@@ -103,7 +223,86 @@
             "description": "Erro interno no servidor",
             "content": {
               "application/json": {
-                "example": {}
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/asaas/webhook": {
+      "post": {
+        "tags": [
+          "Asaas"
+        ],
+        "summary": "handle",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/health": {
+      "get": {
+        "tags": [
+          "Health"
+        ],
+        "summary": "handle",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/condo-fees/generate": {
+      "post": {
+        "tags": [
+          "CondoFees"
+        ],
+        "summary": "Gera as taxas condominiais do ano informado",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "example": {}
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Requisição mal formada",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Não autorizado",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
               }
             }
           }
@@ -121,7 +320,10 @@
           "required": true,
           "content": {
             "application/json": {
-              "example": {}
+              "example": {
+                "status": "string",
+                "id": 1
+              }
             }
           }
         },
@@ -138,7 +340,11 @@
             "description": "Requisição mal formada",
             "content": {
               "application/json": {
-                "example": {}
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
               }
             }
           },
@@ -146,7 +352,11 @@
             "description": "Não autorizado",
             "content": {
               "application/json": {
-                "example": {}
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
               }
             }
           },
@@ -154,7 +364,511 @@
             "description": "Erro interno no servidor",
             "content": {
               "application/json": {
-                "example": {}
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/asaas/balance": {
+      "get": {
+        "tags": [
+          "Asaas"
+        ],
+        "summary": "Consulta o saldo da conta Asaas",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "Requisição mal formada",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Não autorizado",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/asaas/transactions": {
+      "get": {
+        "tags": [
+          "Asaas"
+        ],
+        "summary": "Lista o histórico de transações da conta Asaas",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "Requisição mal formada",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Não autorizado",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/condo-fees/me/pending-summary": {
+      "get": {
+        "tags": [
+          "CondoFees"
+        ],
+        "summary": "Resumo de taxas pendentes do meu apartamento",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "Requisição mal formada",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Não autorizado",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/condo-fees/me": {
+      "get": {
+        "tags": [
+          "CondoFees"
+        ],
+        "summary": "Lista taxas do meu apartamento",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "Requisição mal formada",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Não autorizado",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/condo-fees/pay": {
+      "post": {
+        "tags": [
+          "CondoFees"
+        ],
+        "summary": "Cria cobrança via Asaas para taxas selecionadas",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "example": {}
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Requisição mal formada",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Não autorizado",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Create a new user",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "example": {}
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Requisição mal formada",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Não autorizado",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "List all users",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "Requisição mal formada",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Não autorizado",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sessions/": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Authenticate user",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "example": {}
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Requisição mal formada",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Não autorizado",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/condo-expenses/:id/approve": {
+      "post": {
+        "tags": [
+          "CondoExpenses"
+        ],
+        "summary": "Approve payment of an expense",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "example": {}
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Requisição mal formada",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Não autorizado",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/condo-expenses/": {
+      "get": {
+        "tags": [
+          "CondoExpenses"
+        ],
+        "summary": "Lista todas as despesas do condomínio",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "Requisição mal formada",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Não autorizado",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 1,
+                  "message": "string",
+                  "type": "string"
+                }
               }
             }
           }

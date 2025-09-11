@@ -15,3 +15,6 @@ export * from './Route';
 export * from './Tags';
 export * from './UseGuard';
 export * from './UseMiddleware';
+export * from './Description';
+export * from './ApiParam';
+export * from './ApiQuery';
