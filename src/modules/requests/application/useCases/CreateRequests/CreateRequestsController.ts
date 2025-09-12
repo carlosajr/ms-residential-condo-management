@@ -9,9 +9,9 @@ import {
   Post,
   Tags,
 } from '@/shared/http/docs/decorators';
+import { Description } from '@/shared/http/docs/decorators/Description';
 import { CreateRequestsUseCase } from './CreateRequestsUseCase';
 import { CreateRequestDTO } from '@/modules/requests/domain/dtos/CreateRequestDTO';
-import { Description } from '@/shared/http/docs/decorators/Description';
 import { RequestDTO } from '@/modules/requests/domain/dtos/RequestResponseDTO';
 
 @Tags('Requests')
@@ -32,3 +32,4 @@ export class CreateRequestsController {
     return res.status(201).json(result);
   }
 }
+

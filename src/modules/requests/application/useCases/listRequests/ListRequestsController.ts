@@ -2,8 +2,8 @@ import { Request, Response } from 'express';
 import { container } from 'tsyringe';
 
 import { ApiResponse, CommonResponses, Controller, Get, Tags } from '@/shared/http/docs/decorators';
-import { ListRequestsUseCase } from './ListRequestsUseCase';
 import { Description } from '@/shared/http/docs/decorators/Description';
+import { ListRequestsUseCase } from './ListRequestsUseCase';
 import { RequestDTO } from '@/modules/requests/domain/dtos/RequestResponseDTO';
 
 @Tags('Requests')
@@ -23,3 +23,4 @@ export class ListRequestsController {
     return res.json(result);
   }
 }
+
